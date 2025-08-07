@@ -4,3 +4,4 @@ tensorflow
 numpy
 Pillow
 python-multipart
+opencensus-ext-azure
