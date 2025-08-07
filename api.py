@@ -3,37 +3,10 @@ from fastapi.responses import JSONResponse
 from PIL import Image
 import numpy as np
 import io
-import base64
-import os
-
-import sys
-
-import logging
 
 from src.model_loader import model
 from src.preprocess import prepare_image
 
-logger = logging.getLogger()  # root logger
-logger.setLevel(logging.INFO)
-
-# Supprime tous les handlers existants (au cas où)
-for h in logger.handlers[:]:
-    logger.removeHandler(h)
-
-# Formatter commun
-formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
-
-# Handler console (stdout)
-stream_handler = logging.StreamHandler(sys.stdout)
-stream_handler.setFormatter(formatter)
-logger.addHandler(stream_handler)
-
-# Handler Azure Application Insights (via instrumentation key ou connection string)
-connection_string = os.getenv("APPLICATIONINSIGHTS_CONNECTION_STRING")
-if connection_string:
-    logger.info("Azure Application Insights configuré avec succès.")
-else:
-    logger.warning("InstrumentationKey manquant : les logs ne seront pas envoyés à Azure Application Insights.")
 app = FastAPI()
 
 @app.get("/")
