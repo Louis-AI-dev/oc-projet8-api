@@ -7,6 +7,17 @@ import io
 from src.model_loader import model
 from src.preprocess import prepare_image
 
+import logging
+import sys
+
+logger = logging.getLogger()
+logger.setLevel(logging.INFO)
+
+handler = logging.StreamHandler(sys.stdout)
+logger.addHandler(handler)
+
+logger.info("✅ Application démarrée")
+
 app = FastAPI()
 
 @app.get("/")
