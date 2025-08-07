@@ -13,8 +13,6 @@ import logging
 from src.model_loader import model
 from src.preprocess import prepare_image
 
-from opencensus.ext.azure.log_exporter import AzureLogHandler
-
 logger = logging.getLogger()  # root logger
 logger.setLevel(logging.INFO)
 
@@ -33,9 +31,6 @@ logger.addHandler(stream_handler)
 # Handler Azure Application Insights (via instrumentation key ou connection string)
 connection_string = os.getenv("APPLICATIONINSIGHTS_CONNECTION_STRING")
 if connection_string:
-    azure_handler = AzureLogHandler(connection_string=connection_string)
-    azure_handler.setFormatter(formatter)
-    logger.addHandler(azure_handler)
     logger.info("Azure Application Insights configuré avec succès.")
 else:
     logger.warning("InstrumentationKey manquant : les logs ne seront pas envoyés à Azure Application Insights.")
