@@ -2,11 +2,10 @@
 
 echo "------ Startup script is running ------"
 
-# Optionnel : affiche le contenu du répertoire courant pour vérifier que tout est là
-echo "Current directory contents:"
+echo "Date : $(date)"
+echo "Running in: $(pwd)"
+echo "Contents:"
 ls -la
 
-# Lancement de Gunicorn avec FastAPI
-gunicorn --bind=0.0.0.0:8000 --timeout 600 api:app
-
-echo "------ Gunicorn has been launched ------"
+echo "Launching Gunicorn..."
+exec gunicorn --bind=0.0.0.0:8000 --timeout 600 api:app
