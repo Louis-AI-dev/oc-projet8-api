@@ -4,7 +4,7 @@ from PIL import Image
 import numpy as np
 import io
 import base64
-from matplotlib import cm
+
 import sys
 
 import logging
