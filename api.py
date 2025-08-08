@@ -22,7 +22,7 @@ app = FastAPI()
 
 @app.get("/")
 def hello():
-    return 'Hello world!'
+    return {"message": "Hello world!"}
 
 @app.post("/predict")
 async def predict(image: UploadFile = File(...)):
