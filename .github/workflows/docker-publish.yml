@@ -21,7 +21,7 @@ jobs:
 
       - name: Build Docker image
         run: |
-          IMAGE_NAME=ghcr.io/Louis-AI-dev/oc-projet8
+          IMAGE_NAME=ghcr.io/louis-ai-dev/oc-projet8
           SHA_TAG=$(echo $GITHUB_SHA | cut -c1-7)
           docker build -t $IMAGE_NAME:latest -t $IMAGE_NAME:$SHA_TAG .
 
