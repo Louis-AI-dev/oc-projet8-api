@@ -1,0 +1,20 @@
+# Ignorer app.py (Streamlit)
+app.py
+
+# Ignorer caches Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignorer dossier Git et CI/CD
+.git/
+.github/
+
+# Ignorer fichiers temporaires / logs
+*.log
+*.tmp
+
+# Ignorer dossiers d'environnements virtuels locaux
+venv/
+env/
