@@ -27,7 +27,7 @@ jobs:
 
       - name: Push Docker image
         run: |
-          IMAGE_NAME=ghcr.io/Louis-AI-dev/oc-projet8
+          IMAGE_NAME=ghcr.io/louis-ai-dev/oc-projet8
           SHA_TAG=$(echo $GITHUB_SHA | cut -c1-7)
           docker push $IMAGE_NAME:latest
           docker push $IMAGE_NAME:$SHA_TAG
