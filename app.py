@@ -32,7 +32,7 @@ if uploaded_file:
     buffered.seek(0)
     files = {"image": ("image.png", buffered.getvalue(), "image/png")}
     
-    response = requests.post("http://localhost:8000/predict", files=files)
+    response = requests.post("https://oc-projet8-5ca0c95.onrender.com/predict", files=files)
 
 
     if response.status_code == 200:
